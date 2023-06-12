@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WSA</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<div class="bg-mask" style="align-items: normal;">
+	<div class="container container-main">
+		<header><h1>WSA</h1></header>
+		<nav class="btn-collection dragscroll">
+			<button id="All_animation" class="GenerateList" onclick="GenerateList('All')"><span class="iconify" data-icon="ic:round-done-all"></span></button>
+			<button id="Drivers-border" class="GenerateList" onclick="GenerateList('Drivers_List')">Drivers</button>
+			<button id="Libraries-border" class="GenerateList" onclick="GenerateList('Libraries_List')">Libraries</button>
+			<button id="Software-border" class="GenerateList" onclick="GenerateList('Software_List')">Software</button>
+			<button id="Optimization-border" class="GenerateList" onclick="GenerateList('Optimization_List')">Optimization</button>
+			<button id="Design-border" class="GenerateList" onclick="GenerateList('Design_List')">Design</button>
+		</nav>
+		<div class="main"></div>
+	</div>
+
+<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+<script type="text/javascript" src="libs/dragscroll.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- markdown lib -->
+<script>
+	  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".GenerateList")[0].click();
+    document.querySelectorAll(".GenerateList")[0].className = "GenerateList activeBtn";
+  }); 
+	  marked.use({
+	headerIds: false,
+	mangle: false
+});
+</script>
+</body>
+</html>
